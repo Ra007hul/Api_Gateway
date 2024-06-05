@@ -14,7 +14,7 @@ const limiter = ratelimit({
 
 app.use(morgan('combined'))
 app.use(limiter)
-app.use('/', async (req,res,next)=>{
+app.use('/bookingservice', async (req,res,next)=>{
      try {
          const response = await axios.get('http://localhost:3001/api/v1/isauthenticated' ,{
             headers : {
